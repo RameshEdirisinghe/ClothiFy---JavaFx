@@ -1,6 +1,7 @@
-package Home;
+package Controller.Home;
 
-import Employee.EmployeeController;
+import Controller.Employee.EmployeeController;
+import Controller.Products.ProductsController;
 import animatefx.animation.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,12 +19,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import model.Employee;
-import javafx.embed.swing.SwingFXUtils;
+import model.Product;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -51,6 +49,13 @@ public class HomeFormController implements Initializable {
     public TextField txtEmpCompany;
     public TableColumn colEmpCompany;
     public ImageView imgViewUpImg;
+    public TextField txtProductName;
+    public TextField txtProductId;
+    public ComboBox cmbProductCategory;
+    public TextField txtProductPrice;
+    public ComboBox cmbProductSize;
+    public TextField txtProductQty;
+    public ComboBox cmbProductSupplier;
     private String currentImagePath;
 //    public Static String usrId;
 
@@ -113,10 +118,39 @@ public class HomeFormController implements Initializable {
         colEmpEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colEmpCompany.setCellValueFactory(new PropertyValueFactory<>("company"));
 
+
         loadTable();
 
+        //set cmbProductCategory values
+        reloadCmbCat();
+        reloadCmbsize();
 
     }
+
+    public void reloadCmbCat(){
+        ObservableList<String> cat = FXCollections.observableArrayList();
+        cat.add("Ladies");
+        cat.add("Gents");
+        cat.add("Kids");
+
+
+        cmbProductCategory.setItems(cat);
+    }
+
+
+    public void reloadCmbsize(){
+        ObservableList<String> size = FXCollections.observableArrayList();
+        size.add("Small");
+        size.add("Medium");
+        size.add("Large");
+        size.add("XL");
+        size.add("XXL");
+
+
+        cmbProductSize.setItems(size);
+    }
+
+    
 
     public void btnOnClickActionNext(MouseEvent mouseEvent) {
         pane1stImgs.setVisible(false);     // Hide img1AnchorPane
@@ -181,6 +215,7 @@ public class HomeFormController implements Initializable {
             txtEmpName.setText(employee.getName());
             txtEmpEmail.setText(employee.getEmail());
             txtEmpCompany.setText(employee.getCompany());
+            
         }
     }
 
@@ -194,15 +229,17 @@ public class HomeFormController implements Initializable {
         File file = chooser.showOpenDialog(null);
 
         if (file != null) {
-                String imagePath = file.getAbsolutePath();
-                Image image = new Image(imagePath);
+                currentImagePath = file.getAbsolutePath();
+                Image image = new Image(currentImagePath);
                 imgViewUpImg.setImage(image);
         }
 
     }
 
     public void btnOnClickActionAdd(ActionEvent actionEvent) {
+        if (ProductsController.getInstance().addProducts(new Product(0,txtProductName.getText(),cmbProductCategory.getSelectionModel().getSelectedItem().toString(),cmbProductSize.getSelectionModel().getSelectedItem().toString(),Double.parseDouble(txtProductPrice.getText()),Integer.parseInt(txtProductQty.getText()),currentImagePath,cmbProductSupplier.getSelectionModel().getSelectedItem().toString()))){
 
-        imgViewUpImg.
+        }
+
     }
 }

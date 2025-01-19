@@ -1,11 +1,10 @@
-package Login;
+package Controller.Login;
 
 import DBConnection.DBConnection;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class LoginController {
 

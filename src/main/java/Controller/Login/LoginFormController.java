@@ -1,6 +1,6 @@
-package Login;
+package Controller.Login;
 
-import Home.HomeFormController;
+import Controller.Home.HomeFormController;
 import animatefx.animation.FadeIn;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

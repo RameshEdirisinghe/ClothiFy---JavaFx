@@ -1,45 +1,3 @@
-/* CSS file to round images in JavaFX */
-
-/* Apply rounded styles to all images */
-.imageView {
-    -fx-shape: "M 0,0 L 0,100 A 50,50 0 0,1 100,100 L 100,0 A 50,50 0 0,1 0,0 Z";
-    -fx-background-radius: 50%;
-    -fx-clip-radius: 50%;
-    -fx-border-radius: 50%;
-    -fx-border-color: black;
-    -fx-border-width: 2;
-}
-
-/* Specific class for ImageViews with fx:id imgBestSelling1 */
-#imgBestSelling1 {
-    -fx-shape: "M 0,0 L 0,100 A 50,50 0 0,1 100,100 L 100,0 A 50,50 0 0,1 0,0 Z";
-    -fx-background-radius: 50%;
-    -fx-clip-radius: 50%;
-    -fx-border-radius: 50%;
-    -fx-border-color: #ffffff;
-    -fx-border-width: 2;
-}
-
-/* Specific class for ImageViews with fx:id imgBestSelling2 */
-#imgBestSelling2 {
-    -fx-shape: "M 0,0 L 0,100 A 50,50 0 0,1 100,100 L 100,0 A 50,50 0 0,1 0,0 Z";
-    -fx-background-radius: 50%;
-    -fx-clip-radius: 50%;
-    -fx-border-radius: 50%;
-    -fx-border-color: #ffffff;
-    -fx-border-width: 2;
-}
-
-/* Specific class for ImageViews with fx:id imgBestSelling3 */
-#imgBestSelling3 {
-    -fx-shape: "M 0,0 L 0,100 A 50,50 0 0,1 100,100 L 100,0 A 50,50 0 0,1 0,0 Z";
-    -fx-background-radius: 50%;
-    -fx-clip-radius: 50%;
-    -fx-border-radius: 50%;
-    -fx-border-color: #ffffff;
-    -fx-border-width: 2;
-}
-
 .rectangle {
     -fx-fill: rgba(255, 255, 255, 0.504); /* Glass effect with transparency */
     -fx-arc-width: 25px; /* Rounded corners */
@@ -61,6 +19,49 @@
 
 .rectangle-1 {
     -fx-fill: rgb(255, 255, 255); /* Glass effect with transparency */
+    -fx-arc-width: 25px; /* Rounded corners */
+    -fx-arc-height: 25px;
+    -fx-stroke: rgba(255, 255, 255, 0.3); /* Subtle border */
+    -fx-stroke-width: 0px;
+    -fx-effect: dropshadow(gaussian, rgba(255, 246, 246, 0.5), 15, 0.2, 0, 5); /* Shadow effect */
+}
+
+.mainTab {
+    -fx-background-color:  #1A1A1A;
+}
+
+.mainTab-tab {
+    -fx-background-color: #5c9b4c;
+    -fx-padding: 8px 12px;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.mainTab-tab:hover {
+    -fx-background-color:rgb(100, 171, 76);
+}
+
+.mainTab-tab:selected {
+    -fx-background-color: #1A1A1A;
+    -fx-border-color: #5c9b4c;
+    /*-fx-border-width: 0 0 3px 0;*/
+}
+
+.mainTab-tab .mainTab-tab-label {
+    -fx-text-fill: #5b7355;
+}
+
+.mainTab-tab:selected .mainTab-tab-label {
+    -fx-text-fill: white;
+}
+
+
+.mainTab-tab-header-background {
+    -fx-background-color: #272727;
+}
+
+.CrudTab{
+      -fx-fill: rgb(255, 255, 255); /* Glass effect with transparency */
     -fx-arc-width: 25px; /* Rounded corners */
     -fx-arc-height: 25px;
     -fx-stroke: rgba(255, 255, 255, 0.3); /* Subtle border */

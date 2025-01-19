@@ -1,7 +1,7 @@
-package Employee;
+package Controller.Employee;
 
 import DBConnection.DBConnection;
-import User.UserController;
+import Controller.User.UserController;
 import model.Employee;
 
 import java.sql.Connection;

@@ -1,12 +1,9 @@
-package User;
+package Controller.User;
 
 import DBConnection.DBConnection;
-import Employee.EmployeeController;
 import model.Employee;
 
-import java.awt.dnd.DnDConstants;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserController {
@@ -26,7 +23,7 @@ public class UserController {
             stm.setString(1,employee.getName());
             stm.setString(2,employee.getEmail());
             stm.setString(3,employee.getPassword());
-            stm.setString(4,"Employee");
+            stm.setString(4, "Controller");
 
             return stm.executeUpdate()>0;
         } catch (SQLException e) {
